@@ -1,6 +1,6 @@
 -- Note : Create a table in MySQL Workbench using the following code : 
 
--- SQL Code to Create the Table
+-- SQL Code to Creating the Table
 CREATE TABLE Student_Performance (
     student_id INT PRIMARY KEY,
     name VARCHAR(50),
@@ -13,7 +13,7 @@ CREATE TABLE Student_Performance (
 );
 
 
--- Insert the Data
+-- Inserting the Data
 INSERT INTO Student_Performance (student_id, name, course, score, attendance, mentor, join_date, city)
 VALUES
 (101, 'Aarav Mehta', 'Data Science', 88, 92, 'Dr. Sharma', '2023-06-12', 'Mumbai'),
@@ -94,12 +94,3 @@ FROM Student_Performance;
 SELECT DISTINCT(course), 
 	FIRST_VALUE(score) over(PARTITION BY course ORDER BY score DESC) AS highest_score
 FROM Student_Performance;
-
-
-
-
-
-
-
-
--- Can you teach me all the things covered in this playlist, one by one in complete detail with beautiful analogies, practice code, questions and practice challenges. Keep asking me questions in between to check my knowledge and understanding. Proceed very slowly and in detail module wise
