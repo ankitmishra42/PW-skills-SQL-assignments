@@ -41,7 +41,6 @@ SELECT student_id, name, score,
 FROM Student_Performance;
 
 
-
 -- Question 2 : Show each student's score and the previous student’s score (based on score order).
 SELECT name, score,
     LAG(score) OVER (ORDER BY score DESC) AS prev_score
