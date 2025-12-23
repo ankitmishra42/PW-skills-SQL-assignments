@@ -21,8 +21,8 @@ HAVING SUM(country.Population) > 200000000;
 
 
 -- Question 4 : Find the top 5 continents by average GNP per country.
-SELECT country.Name, AVG(country.GNP) AS avg_GNP_per_country FROM country
-GROUP BY country.Name
+SELECT country.Continent, AVG(country.GNP) AS avg_GNP_per_country FROM country
+GROUP BY country.Continent
 ORDER BY AVG(country.GNP) DESC
 LIMIT 5; 
 
@@ -35,7 +35,7 @@ GROUP BY c.Continent;
 
 
 -- Question 6 : Find the maximum and minimum GNP for each continent.
-SELECT country.Continent, MAX(country.GNP) AS max_GNP, MIN(country.GNP) AS min_GNP FROM country
+SELECT country.Continent, MAX(IFNULL(country.GNP,0)) AS max_GNP, MIN(IFNULL(country.GNP,0)) AS min_GNP FROM country
 GROUP BY country.Continent; 
 
 
